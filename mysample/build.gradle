@@ -1,0 +1,66 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion rootProject.compileSdkVersion
+    buildToolsVersion rootProject.buildToolsVersion
+
+    targetCompatibility = targetCompatibilityVersion
+    sourceCompatibility = sourceCompatibilityVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.minSdkVersion
+        targetSdkVersion rootProject.targetSdkVersion
+
+        multiDexEnabled true
+    }
+
+    // TODO(#62): Re-enable abort on error.
+    lintOptions {
+        abortOnError false
+    }
+}
+
+dependencies {
+    implementation project(':litho-core')
+    implementation project(':litho-widget')
+//    implementation project(':litho-fresco')
+//    implementation project(':litho-sections-core')
+//    implementation project(':litho-sections-widget')
+//    compileOnly project(':litho-sections-annotations')
+    annotationProcessor project(':litho-processor')
+//    annotationProcessor project(':litho-sections-processor')
+//
+//    // First-party
+    implementation deps.soloader
+//    implementation deps.flipper
+//    implementation deps.flipperLithoPlugin
+//    implementation deps.fresco
+//    implementation deps.guava
+//
+//    // Annotations
+//    compileOnly deps.jsr305
+//    compileOnly deps.inferAnnotations
+//
+//    // Support Library
+    implementation deps.supportAppCompat
+//    implementation deps.supportRecyclerView
+//
+//    // Integration test only
+//    androidTestImplementation project(':litho-espresso')
+//    androidTestImplementation deps.supportEspresso
+//    androidTestImplementation deps.supportEspressoIntents
+//    androidTestImplementation deps.junit
+//
+//    // Unit test only
+//    testImplementation project(':litho-testing')
+//    testCompileOnly deps.jsr305
+//    testAnnotationProcessor project(':litho-processor')
+//    testImplementation deps.junit
+//    testImplementation deps.hamcrestLibrary
+//    testImplementation deps.robolectric
+//    testImplementation deps.supportTestCore
+//    testImplementation deps.assertjCore
+//    testImplementation deps.mockitoCore
+
+
+}
